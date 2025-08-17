@@ -1,0 +1,102 @@
+/* ---------- Base ---------- */
+:root{
+  --bg:#0f172a;           /* slate-900 */
+  --card:#0b1224;         /* deeper panel */
+  --text:#e5e7eb;         /* gray-200 */
+  --muted:#9ca3af;        /* gray-400 */
+  --accent:#38bdf8;       /* sky-400 */
+  --accent-2:#22d3ee;     /* cyan-400 */
+  --link:#93c5fd;         /* blue-300 */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: radial-gradient(1200px 600px at 20% -10%, #1f2a44 0%, transparent 60%) , var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* ---------- Layout ---------- */
+.container{
+  max-width:1100px;
+  margin-inline:auto;
+  padding:32px 20px;
+}
+
+.card{
+  background:linear-gradient(180deg,#0f1a33 0%, var(--card) 100%);
+  border:1px solid #1f2937;
+  border-radius:14px;
+  padding:22px 26px;
+  box-shadow:0 10px 24px rgba(0,0,0,.25);
+}
+
+/* ---------- Nav ---------- */
+nav{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter:saturate(160%) blur(8px);
+  background:rgba(8,12,24,.65);
+  border-bottom:1px solid #1f2937;
+}
+.nav-wrap{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.brand{
+  font-weight:800; letter-spacing:.2px; font-size:18px;
+}
+.brand span{background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+nav a{
+  color:var(--text); text-decoration:none; padding:10px 12px; border-radius:10px; font-weight:600; opacity:.9
+}
+nav a:hover, nav a[aria-current="page"]{
+  background:#0b1224; color:#cfe8ff
+}
+
+/* ---------- Headings ---------- */
+h1,h2{
+  line-height:1.25;
+  margin:0 0 14px 0;
+}
+.h-accent{
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:.3px;
+  background:linear-gradient(90deg,var(--accent) 0%, var(--accent-2) 50%, #60a5fa 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.sub{
+  color:var(--muted);
+  font-weight:600;
+  margin-top:-6px;
+}
+
+/* ---------- Lists & links ---------- */
+ul{padding-left:20px; margin:8px 0 0}
+li+li{margin-top:10px}
+a{color:var(--link)}
+a:hover{color:#c7d2fe}
+
+/* ---------- Sections ---------- */
+.section{margin:26px 0}
+.kicker{
+  font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+  color:#a5b4fc; margin-bottom:8px
+}
+.hr{height:1px; background:#1f2937; border:0; margin:24px 0}
+
+/* ---------- Utilities ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+@media (min-width:900px){
+  .grid{grid-template-columns:1.2fr .8fr}
+}
+.badge{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:#0b1224; border:1px solid #1f2937; color:#cfe8ff; font-weight:700; font-size:12px
+}
+.list-tight li{margin-top:6px}
+.footer{color:var(--muted); font-size:13px; margin-top:26px}
